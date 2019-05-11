@@ -3,9 +3,18 @@ import Layout from "../components/layout"
 import { Link, graphql } from "gatsby"
 import { rhythm } from "../utils/typography"
 import { css } from "@emotion/core"
+import { Helmet } from "react-helmet"
 
 export default ({ data }) => (
   <Layout>
+    <Helmet>
+      <meta charSet="utf-8" />
+      <title>Home Page</title>
+      <link rel="canonical" href="https://gatsby-far-flung-teeth.surge.sh/" />
+      <meta name="description" content="This is the homepage for the website" />
+      <meta name="keywords" content="Gatsby, JavaScript, ES6" />
+      <meta name="author" content="Besher Al Maleh" />
+    </Helmet>
     <div>
       <h1
         css={css`
@@ -64,8 +73,8 @@ export const query = graphql`
             title
             date(formatString: "DD MMMM, YYYY")
           }
-          fields { 
-              slug
+          fields {
+            slug
           }
           excerpt
         }
